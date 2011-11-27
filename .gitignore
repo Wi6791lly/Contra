@@ -8,4 +8,5 @@ storage/logs
 storage/mod
 storage/config.cf
 storage/users.cf
+plugins/extensions/bot.php
 update.bat
