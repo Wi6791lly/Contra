@@ -54,5 +54,5 @@ class Cleanup extends extension {
 		$this->unhook('e_post', 'recv_admin_show');
 	}
 }
-new cleanup($core);
+new Cleanup($core);
 ?>
