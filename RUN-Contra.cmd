@@ -1,4 +1,9 @@
 @echo off
+setlocal enableextensions
+pushd %~dp0
+for %%* in (.) do @title %%~n*
+popd
+endlocal
 
 rem		Contra run script v3.0 by photofroggy
 rem		Released under a Creative Commons 3.0 license.
