@@ -166,7 +166,7 @@ class Bot {
 		while($this->running === true) {
 			$this->Events->trigger('loop');
 			$this->Timer->triggerEvents();
-			usleep(1000);
+			usleep(10000);
 		}
 		foreach($this->shutdownStr as $id => $string)
 			$this->Console->Notice($string);
