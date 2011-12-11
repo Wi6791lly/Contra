@@ -121,7 +121,7 @@ class Bot {
 			$this->Console->Warning('Exiting...');
 		}
 	}
-
+	
 	function load_config() {
 		$config = include './storage/config.cf';
 		$this->username = $config['info']['username'];
