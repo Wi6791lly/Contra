@@ -61,14 +61,19 @@ goto loop
 :stopped
 echo ===============================================================================
 echo ** Contra has stopped.
-goto confirm
-:confirm
-set /p input=** Would you like to reboot? [y/n]
-if %input%==y goto continue
-if %input%==Y goto continue
-if %input%==n goto stop
-if %input%==N goto stop
-goto confirm
+set AttemptZ=0
+echo [%time%] [%date%] - Disconnected.>>Connection.log
+:check
+set /a AttemptZ=%AttemptZ%+1
+ping -n 1 www.deviantart.com | find "Reply from " >NUL
+if errorlevel 1 (
+echo Attempt %AttemptZ% - Not connected. Trying again, please wait...
+goto check
+) else (
+echo Attempt %Attempts% - Connected!
+echo [%time%] [%date%] Attempt %AttemptZ% - Connected!>>Connection.log
+goto continue
+)
 
 :continue
 echo ===============================================================================
